@@ -5,10 +5,14 @@ const TodoForm = () => {
     const titleRef=useRef();
     const descriptionRef=useRef();
     const dateRef=useRef();
-    
+
     const addTodoHandler=(e)=>{
         e.preventDefault();
-        // const title
+        const title=titleRef.current.value;
+        const description=descriptionRef.current.value;
+        const date=dateRef.current.value;
+        //logging for now
+        console.log(title,description,date);
 
     }
   return (
@@ -18,11 +22,11 @@ const TodoForm = () => {
           <Form.Label>Add todo here</Form.Label>
           <Form.Group controlId="formBasicEmail">
             <Form.Label>Todo Title</Form.Label>
-            <Form.Control type="text" placeholder="Enter title" />
+            <Form.Control type="text" placeholder="Enter title" ref={titleRef}/>
             <Form.Label>Todo Description</Form.Label>
-            <Form.Control type="text" placeholder="Enter description" />
+            <Form.Control type="text" placeholder="Enter description" ref={descriptionRef}/>
             <Form.Label>Todo Date</Form.Label>
-            <Form.Control type="date" placeholder="Enter date" />
+            <Form.Control type="date" placeholder="Enter date" ref={dateRef}/>
           </Form.Group>
           <Button type="submit" variant="warning" onClick={addTodoHandler}>
             ADD
