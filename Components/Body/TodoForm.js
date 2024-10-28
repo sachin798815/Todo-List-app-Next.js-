@@ -11,7 +11,7 @@ const TodoForm = () => {
         const title=titleRef.current.value;
         const description=descriptionRef.current.value;
         const date=dateRef.current.value;
-        //logging for now
+        
         console.log(title,description,date);
 
     }

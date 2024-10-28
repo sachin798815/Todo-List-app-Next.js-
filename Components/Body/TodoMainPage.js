@@ -4,7 +4,7 @@ import PendingTodoList from "./PendingTodoList";
 
 const TodoMainPage = () => {
   return (
-    <Container>
+    <Container className="border border-warning shadow p-3 mb-5 bg-white rounded">
       {/* todoform and list will be shown here */}
       <TodoForm />
       <PendingTodoList/>
