@@ -9,7 +9,7 @@ function TodoHomePage() {
       <title>Meetups</title>
       <meta
       name="description"
-      content="Best meetups in your city"
+      content="Easy todo management"
       >
       </meta>
     </Head>
