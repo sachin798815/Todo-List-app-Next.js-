@@ -2,6 +2,8 @@ import { Container } from "react-bootstrap";
 import TodoHomePage from '../Components/Body/TodoMainPage';
 import NavComponent from '../Components/Header/NavComponent';
 import Head from "next/head";
+import { MongoClient } from "mongodb";
+
 
 function TodoHomePage() {
   return (<>
@@ -20,5 +22,22 @@ function TodoHomePage() {
     </Container>
   </>
   );
+}
+export async function getStaticProps() {
+  const client = await MongoClient.connect(
+    "mongodb+srv://test:test@cluster0.qnlqt.mongodb.net/Todolist?retryWrites=true&w=majority&appName=Cluster0"
+  );
+  const db = client.db();
+  const meetupsCollection = db.collection("");
+  const meetups = await meetupsCollection.find().toArray();
+  client.close();
+  return {
+    props: {
+      meetups: meetups.map(data=>({
+        id: data._id.toString(),
+      }))
+    },
+    revalidate: 10,
+  };
 }
 export default TodoHomePage;
