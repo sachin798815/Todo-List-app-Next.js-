@@ -12,7 +12,13 @@ const TodoForm = () => {
         const description=descriptionRef.current.value;
         const date=dateRef.current.value;
         
-        console.log(title,description,date);
+        const todoData = {
+          title: enteredTitle,
+          description: enteredDescription,
+          date: enteredDate
+        };
+    
+        props.onAddTodo(todoData);
 
     }
   return (
