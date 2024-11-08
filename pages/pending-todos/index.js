@@ -1,14 +1,14 @@
 import Head from "next/head";
 import CompletedTodoList from "../../Components/Body/CompletedTodoList";
-function CompletedTodosPage() {
+function PendingTodosPage() {
     
   return (
     <>
     <Head>
-      <title>Completed todos</title>
+      <title>Todos</title>
       <meta
       name="description"
-      content="see done todos here"
+      content="Add todo here"
       >
       </meta>
     </Head>
@@ -16,4 +16,4 @@ function CompletedTodosPage() {
     </>
   );
 }
-export default CompletedTodosPage; 
+export default PendingTodosPage; 

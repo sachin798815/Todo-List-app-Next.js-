@@ -7,7 +7,7 @@ import { MongoClient } from "mongodb";
 function TodoHomePage() {
   return (<>
   <Head>
-      <title>Meetups</title>
+      <title>Todos</title>
       <meta
       name="description"
       content="Easy todo management"
