@@ -25,9 +25,6 @@ const CompletedTodoList = () => {
     console.log(todo);
   }
 
-  const editButtonHandler=(todo)=>{
-    console.log(todo);
-  }
   return (
    
     <Container className="border border-warning shadow p-3 mb-5 bg-white rounded">
@@ -36,7 +33,6 @@ const CompletedTodoList = () => {
           todo.status === "pending" ? (
             <li key={todo.id}>
               {todo.title} - {todo.description}
-              <Button onClick={editButtonHandler}>Edit</Button>
               <Button onClick={deleteButtonHandler}>Delete</Button>
             </li>
           ) : null
