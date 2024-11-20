@@ -22,7 +22,15 @@ const PendingTodoList = () => {
     },
   ];
   const deleteButtonHandler = (todo) => {
-    console.log(todo);
+    fetch('',
+      {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(todo),
+          })
+          console.log('deleted');
   };
 
   const editButtonHandler = (todo) => {
