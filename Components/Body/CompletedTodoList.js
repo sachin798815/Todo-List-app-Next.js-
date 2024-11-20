@@ -3,7 +3,15 @@ import { Button, Container } from "react-bootstrap";
 const CompletedTodoList = () => {
   
   const deleteButtonHandler=(todo)=>{
-    console.log(todo);
+    fetch('',
+      {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(todo),
+          })
+          console.log('deleted');
   }
 
   return (
