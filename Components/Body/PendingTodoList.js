@@ -33,8 +33,23 @@ const PendingTodoList = () => {
           console.log('deleted');
   };
 
-  const editButtonHandler = (todo) => {
-    console.log(todo);
+  const editButtonHandler = (todo) => {fetch('',
+    {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(todo),
+        })
+        fetch('',
+          {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              },
+              body: JSON.stringify(todo),
+              })
+        
   };
   return (
     <Container className="border border-warning shadow p-3 mb-5 bg-white rounded">
