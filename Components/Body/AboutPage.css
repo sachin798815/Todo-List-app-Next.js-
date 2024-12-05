@@ -7,6 +7,12 @@
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
 }
 
 h1 {
@@ -15,6 +21,7 @@ h1 {
   color: #343a40;
   margin-bottom: 1.5rem;
   text-align: center;
+  letter-spacing: 1px;
 }
 
 p {
@@ -22,4 +29,9 @@ p {
   line-height: 1.8;
   color: #495057;
   text-align: justify;
+  margin-bottom: 1rem;
+}
+
+p:last-child {
+  margin-bottom: 0;
 }
