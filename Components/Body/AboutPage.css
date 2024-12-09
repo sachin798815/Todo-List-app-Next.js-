@@ -7,12 +7,12 @@
   max-width: 850px;
   margin-left: auto;
   margin-right: auto;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .container:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+  transform: translateY(-8px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.25);
 }
 
 h1 {
@@ -22,7 +22,7 @@ h1 {
   margin-bottom: 1.8rem;
   text-align: center;
   letter-spacing: 1.5px;
-  transition: color 0.4s ease;
+  transition: color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 h1:hover {
@@ -35,12 +35,12 @@ p {
   color: #52575c;
   text-align: justify;
   margin-bottom: 1.2rem;
-  transition: color 0.4s ease, transform 0.3s ease;
+  transition: color 0.5s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 p:hover {
   color: #2c2f33;
-  transform: scale(1.02);
+  transform: scale(1.05);
 }
 
 p:last-child {
