@@ -46,7 +46,7 @@
   }
   
   button:active {
-    transform: scale(0.98); /* for btn shrink on click */
+    transform: scale(0.98);
   }
   
   /* Delete Button */
@@ -65,14 +65,14 @@
     }
   
     li {
-      flex-direction: column; /* Stack content vertically */
+      flex-direction: column; 
       align-items: flex-start;
     }
   
     button {
       margin-left: 0;
-      margin-top: 5px; /* for space b/w buttons */
-      width: 100%; /* full-width buttons for mobile display devices*/
+      margin-top: 5px; 
+      width: 100%;
     }
   }
   
