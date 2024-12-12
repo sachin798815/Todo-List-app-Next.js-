@@ -1,14 +1,14 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', Arial, sans-serif;
-  background-color: #f0f8ff;
+  background: linear-gradient(180deg, #f0f8ff, #dbeeff);
   color: #1a1a1a;
 }
 
 .container {
   margin-top: 2.5rem;
   padding: 2.5rem;
-  background-color: #ffffff;
+  background: linear-gradient(145deg, #ffffff, #f8f9fa);
   border-radius: 10px;
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
   max-width: 850px;
@@ -30,10 +30,16 @@ h1 {
   text-align: center;
   letter-spacing: 1px;
   transition: color 0.3s ease;
+  background: linear-gradient(90deg, #004080, #0066cc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 h1:hover {
   color: #00264d;
+  background: linear-gradient(90deg, #00264d, #004080);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 p {
