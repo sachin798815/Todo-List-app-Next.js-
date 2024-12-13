@@ -1,10 +1,15 @@
+import { useRef } from "react";
 import { Form } from "react-bootstrap";
 
 const ReviewPage=()=>{
+    const titleRef=useRef();
+    const descriptionRef=useRef();
+
     const addReviewHandler=()=>{
         e.preventDefault();
         const reviewTitle=titleRef.current.value;
-        console.log("Review Added");
+        const reviewDescription=descriptionRef.current.value;
+        console.log("title is "+reviewTitle+"and description is "+reviewDescription);
     }
     return(
         <>
