@@ -1,6 +1,11 @@
 import { Form } from "react-bootstrap";
 
 const ReviewPage=()=>{
+    const addReviewHandler=()=>{
+        e.preventDefault();
+        const reviewTitle=titleRef.current.value;
+        console.log("Review Added");
+    }
     return(
         <>
         <h1>Reviews</h1>
