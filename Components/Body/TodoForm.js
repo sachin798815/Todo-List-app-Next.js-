@@ -12,7 +12,10 @@ const TodoForm = (props) => {
     const title = titleRef.current.value.trim();
     const description = descriptionRef.current.value.trim();
     const date = dateRef.current.value;
-
+    if (!title || !description || !date) {
+      alert("Please fill out all fields before submitting!");
+      return;
+    }
    
     const todoData = {
       title,
@@ -21,7 +24,9 @@ const TodoForm = (props) => {
     };
 
     console.log(todoData);
-
+    titleRef.current.value = "";
+    descriptionRef.current.value = "";
+    dateRef.current.value = "";
   };
 
   return (
