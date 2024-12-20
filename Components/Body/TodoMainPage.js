@@ -1,13 +1,15 @@
 import { Container } from "react-bootstrap";
 import TodoForm from "./TodoForm";
 import PendingTodoList from "./PendingTodoList";
+import classes from './TodoMainPage.module.css';
 
 const TodoMainPage = () => {
   return (
-    <Container className="border border-warning shadow p-3 mb-5 bg-white rounded">
-      {/* todoform and list will be shown here */}
-      <TodoForm />
-      <PendingTodoList/>
+    <Container className={classes.container}>
+      <div className={classes["section-spacing"]}>
+        <TodoForm />
+      </div>
+      <PendingTodoList />
     </Container>
   );
 };
