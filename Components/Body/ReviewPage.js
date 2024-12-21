@@ -11,9 +11,17 @@ const ReviewPage = () => {
     const reviewTitle = titleRef.current.value.trim();
     const reviewDescription = descriptionRef.current.value.trim();
 
+    if (!reviewTitle || !reviewDescription) {
+      alert("Please fill out both fields before submitting!");
+      return;
+    }
+
     console.log(
       `Title: ${reviewTitle}, Description: ${reviewDescription}`
     );
+
+    titleRef.current.value = "";
+    descriptionRef.current.value = "";
   };
 
   return (
