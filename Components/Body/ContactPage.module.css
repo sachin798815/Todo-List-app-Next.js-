@@ -31,6 +31,11 @@ p {
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
+.form-control:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
 .button-primary {
   background-color: #007bff;
   border: none;
@@ -39,4 +44,14 @@ p {
   border-radius: 4px;
   font-size: 1rem;
   transition: background-color 0.3s ease;
+}
+
+.button-primary:hover {
+  background-color: #0056b3;
+  cursor: pointer;
+}
+
+.button-primary:focus {
+  outline: none;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.6);
 }
