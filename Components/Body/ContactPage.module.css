@@ -1,0 +1,42 @@
+.container {
+  border: 2px solid #007bff;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+  max-width: 800px;
+  margin: 2rem auto;
+}
+
+h1 {
+  font-size: 2rem;
+  color: #0056b3;
+  margin-bottom: 1rem;
+}
+
+p {
+  font-size: 1rem;
+  color: #6c757d;
+  margin-bottom: 2rem;
+}
+
+.form-label {
+  font-weight: bold;
+  color: #0056b3;
+}
+
+.form-control {
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.button-primary {
+  background-color: #007bff;
+  border: none;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
