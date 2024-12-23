@@ -2,6 +2,8 @@ import { Container, Form, Button } from "react-bootstrap";
 
 const ContactPage = () => {
   const submitHandler = (e) => {
+    e.preventDefault();
+    alert("Thank you for reaching out! We'll get back to you soon.");
   };
 
   return (
@@ -12,6 +14,10 @@ const ContactPage = () => {
         the form below.
       </p>
       <Form onSubmit={submitHandler}>
+        <Form.Group className="mb-3" controlId="formName">
+          <Form.Label>Your Name</Form.Label>
+          <Form.Control type="text" placeholder="Enter your name" required />
+        </Form.Group>
         <Form.Group className="mb-3" controlId="formEmail">
           <Form.Label>Your Email</Form.Label>
           <Form.Control
