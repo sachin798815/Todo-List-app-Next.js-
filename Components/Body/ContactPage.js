@@ -1,15 +1,40 @@
-import { Container } from "react-bootstrap";
+import { Container, Form, Button } from "react-bootstrap";
 
-const ContactPage=()=>{
-    return(
-        <>
-        <Container>
-            <h1>The contact page</h1>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam iure neque veritatis alias animi sequi autem quasi exercitationem quo iusto suscipit consectetur repellat nisi expedita incidunt ullam, aut quisquam ea.</p>
-            
-        </Container>
-        </>
-    )
-}
+const ContactPage = () => {
+  const submitHandler = (e) => {
+  };
+
+  return (
+    <Container className="border border-primary shadow p-4 my-4 bg-light rounded">
+      <h1 className="mb-3">Contact Us</h1>
+      <p className="text-muted">
+        Have questions or need assistance? Feel free to reach out to us using
+        the form below.
+      </p>
+      <Form onSubmit={submitHandler}>
+        <Form.Group className="mb-3" controlId="formEmail">
+          <Form.Label>Your Email</Form.Label>
+          <Form.Control
+            type="email"
+            placeholder="Enter your email address"
+            required
+          />
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="formMessage">
+          <Form.Label>Message</Form.Label>
+          <Form.Control
+            as="textarea"
+            rows={4}
+            placeholder="Write your message here"
+            required
+          />
+        </Form.Group>
+        <Button type="submit" variant="primary">
+          Submit
+        </Button>
+      </Form>
+    </Container>
+  );
+};
 
 export default ContactPage;
