@@ -1,10 +1,26 @@
 import { Container } from "react-bootstrap";
-import TodoHomePage from '../Components/Body/TodoMainPage';
 import Head from "next/head";
 import { MongoClient } from "mongodb";
+import PendingTodoList from "../Components/Body/PendingTodoList";
+import TodoForm from "../Components/Body/TodoForm";
 
 
 function TodoHomePage() {
+
+  async function addTodoHandler(enteredTodoData){
+    const response = await fetch("/api/new-todo",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          },
+          body: JSON.stringify(enteredTodoData),
+          }
+    )
+    const data = await response.json();
+    console.log(data);
+  }
+
   return (<>
   <Head>
       <title>Todos</title>
@@ -15,8 +31,8 @@ function TodoHomePage() {
       </meta>
     </Head>
     <Container className="border border-warning shadow p-3 mb-5 bg-white rounded">
-      <h1>The TodoHomePage</h1>
-      <TodoMainPage/>
+      <PendingTodoList/>
+      <TodoForm onAddTodo={addTodoHandler}/>
     </Container>
   </>
   );

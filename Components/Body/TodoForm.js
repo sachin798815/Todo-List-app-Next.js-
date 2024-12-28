@@ -12,18 +12,15 @@ const TodoForm = (props) => {
     const title = titleRef.current.value.trim();
     const description = descriptionRef.current.value.trim();
     const date = dateRef.current.value;
-    if (!title || !description || !date) {
-      alert("Please fill out all fields before submitting!");
-      return;
-    }
    
     const todoData = {
       title,
       description,
       date,
+      status:"pending"
     };
 
-    console.log(todoData);
+    props.onAddTodo(todoData);
     titleRef.current.value = "";
     descriptionRef.current.value = "";
     dateRef.current.value = "";
@@ -50,7 +47,7 @@ const TodoForm = (props) => {
           <Form.Control type="date" ref={dateRef} />
         </Form.Group>
         <Button type="submit" variant="warning">
-          ADD
+          ADD TODO
         </Button>
       </Form>
     </Container>

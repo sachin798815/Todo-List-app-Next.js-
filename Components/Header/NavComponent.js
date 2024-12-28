@@ -11,8 +11,7 @@ const NavComponent = () => {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
               <Link href='/'>Home</Link>
-              <Link href='/completed-todos'>Todos</Link>
-              <Link href='/pending-todos'>Completed Todos</Link>
+              <Link href='/completed-todos'>Completed Todos</Link>
               <NavDropdown title="Dropdown" id="basic-nav-dropdown">
                 <NavDropdown.Item href="#action/3.1">About</NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.2">Contacts</NavDropdown.Item>
