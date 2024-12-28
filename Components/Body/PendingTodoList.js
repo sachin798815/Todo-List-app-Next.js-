@@ -1,27 +1,47 @@
 import { Button, Container } from "react-bootstrap";
 
 const PendingTodoList = (props) => {
-  const deleteButtonHandler = (todo) => {
-    fetch('',
-      {
-        method: 'DELETE',
+  const deleteButtonHandler = async (todo) => {
+    try {
+      const response = await fetch("/api/delete-todo", {
+        method: "DELETE",
         headers: {
-          'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(todo),
-          })
-          console.log('deleted');
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ id: todo.id }),
+      });
+      const data = await response.json();
+      console.log(data.message);
+    } catch (error) {
+      console.error("Error deleting todo:", error);
+    }
+  };
+
+  const doneButtonHandler = async (todo) => {
+    try {
+      const response = await fetch("/api/update-todo", {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ id: todo.id }),
+      });
+      const data = await response.json();
+      console.log(data.message);
+    } catch (error) {
+      console.error("Error updating todo:", error);
+    }
   };
 
   return (
     <Container className="border border-warning shadow p-3 mb-5 bg-white rounded">
       <ul>
-        {
-        props.TodoList.map((todo) =>
+        {props.TodoList.map((todo) =>
           todo.status === "pending" ? (
             <li key={todo.id}>
               {todo.title} - {todo.description}
-              <Button onClick={deleteButtonHandler}>Delete</Button>
+              <Button onClick={() => doneButtonHandler(todo)}>Done</Button>
+              <Button onClick={() => deleteButtonHandler(todo)}>Delete</Button>
             </li>
           ) : null
         )}
@@ -29,4 +49,5 @@ const PendingTodoList = (props) => {
     </Container>
   );
 };
+
 export default PendingTodoList;
