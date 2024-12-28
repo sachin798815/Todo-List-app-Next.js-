@@ -1,26 +1,58 @@
+import { useRouter } from "next/router";
 import Link from "next/link";
-import { Navbar } from "react-bootstrap";
+import styles from "../Header/NavComponent.module.css";
 
 const NavComponent = () => {
+  const router = useRouter();
+
   return (
-    <>
-      <Navbar expand="lg" className="bg-body-tertiary warning">
-        <Container>
-          <Navbar.Brand href="#home">Todo List</Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto">
-              <Link href='/'>Home</Link>
-              <Link href='/completed-todos'>Completed Todos</Link>
-              <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">About</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">Contacts</NavDropdown.Item>
-              </NavDropdown>
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
-    </>
+    <nav className={styles.customNavbar}>
+      <div className={styles.container}>
+        <a href="#home" className={styles.customNavbarBrand}>
+          Todo List
+        </a>
+        <div className={styles.navLeft}>
+          <Link
+            href="/"
+            className={`${styles.customNavLink} ${
+              router.pathname === "/" ? styles.activeLink : ""
+            }`}
+          >
+            Home
+          </Link>
+          <Link
+            href="/completed-todos"
+            className={`${styles.customNavLink} ${
+              router.pathname === "/completed-todos"
+                ? styles.activeLink
+                : ""
+            }`}
+          >
+            Completed Todos
+          </Link>
+        </div>
+        <div className={styles.navToggle}>☰</div>
+        <div className={styles.navCollapse}>
+          <div className={styles.nav}>
+            <div className={styles.navDropdown}>
+              <button className={styles.dropdownToggle}>More</button>
+              <div className={styles.dropdownMenu}>
+                <a href="#action/3.1" className={styles.customNavDropdownItem}>
+                  Profile
+                </a>
+                <a href="#action/3.2" className={styles.customNavDropdownItem}>
+                  Settings
+                </a>
+                <div className={styles.dropdownDivider}></div>
+                <a href="#action/3.3" className={styles.customNavDropdownItem}>
+                  Logout
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
   );
 };
 

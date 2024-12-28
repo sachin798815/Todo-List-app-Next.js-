@@ -1,5 +1,5 @@
 import Head from "next/head";
-import CompletedTodoList from "../../Components/Body/CompletedTodoList";
+import PendingTodoList from "../../Components/Body/PendingTodoList";
 function PendingTodosPage() {
     
   return (
@@ -12,7 +12,7 @@ function PendingTodosPage() {
       >
       </meta>
     </Head>
-    <CompletedTodoList/>
+    <PendingTodoList/>
     </>
   );
 }

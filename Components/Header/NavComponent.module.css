@@ -1,0 +1,151 @@
+.customNavbar {
+  background-color: #f8f9fa;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.customNavbarBrand {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.customNavbarBrand:hover {
+  color: #0056b3;
+}
+
+.navLeft {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.navToggle {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.navCollapse {
+  display: flex;
+}
+
+.nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.customNavLink {
+  font-size: 1rem;
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.customNavLink:hover {
+  color: #0056b3;
+}
+
+.activeLink {
+  font-weight: bold;
+  color: #0056b3;
+}
+
+
+.navDropdown {
+  position: relative;
+}
+
+.dropdownToggle {
+  background: none;
+  border: none;
+  color: #333;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.dropdownMenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  padding: 1rem;
+  z-index: 1;
+}
+
+.navDropdown:hover .dropdownMenu {
+  display: block;
+}
+
+.customNavDropdownItem {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: #333;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.customNavDropdownItem:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdownDivider {
+  border-top: 1px solid #ddd;
+  margin: 0.5rem 0;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navLeft {
+    width: 100%;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .navToggle {
+    display: block;
+  }
+
+  .navCollapse {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navToggle.active + .navCollapse .nav {
+    display: flex;
+  }
+
+  .customNavLink {
+    padding: 1rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  .dropdownMenu {
+    position: static;
+    width: 100%;
+    box-shadow: none;
+  }
+
+  .customNavDropdownItem {
+    width: 100%;
+    text-align: center;
+  }
+}
