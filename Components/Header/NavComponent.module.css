@@ -50,11 +50,15 @@
   transition: color 0.3s ease;
 }
 
+.customNavbar a {
+  text-decoration: none;
+}
+
 .customNavLink:hover {
   color: #0056b3;
 }
 
-.activeLink {
+.activeLink a{
   font-weight: bold;
   color: #0056b3;
 }
