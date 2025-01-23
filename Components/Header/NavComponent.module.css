@@ -1,125 +1,137 @@
+/* General Navbar Styles */
 .customNavbar {
   background-color: #f8f9fa;
-  padding: 1rem 2rem;
-  margin-bottom: 3rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid #ddd;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: Arial, sans-serif;
 }
 
 .container {
+  width: 100%;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 }
 
+/* Brand Styles */
 .customNavbarBrand {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   font-weight: bold;
   color: #333;
   text-decoration: none;
-  transition: color 0.3s ease;
 }
 
 .customNavbarBrand:hover {
-  color: #0056b3;
+  color: #007bff;
 }
 
+/* Navigation Links */
 .navLeft {
   display: flex;
-  gap: 1.5rem;
-}
-
-.navToggle {
-  display: none;
-  font-size: 2rem;
-  cursor: pointer;
-}
-
-.navCollapse {
-  display: flex;
-}
-
-.nav {
-  display: flex;
-  gap: 1.5rem;
+  align-items: center;
 }
 
 .customNavLink {
+  margin-right: 15px;
   font-size: 1rem;
   color: #333;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
-.customNavbar a {
-  text-decoration: none;
-}
-
 .customNavLink:hover {
-  color: #0056b3;
+  color: #007bff;
 }
 
-.activeLink a{
+.activeLink {
   font-weight: bold;
-  color: #0056b3;
+  color: #007bff;
 }
 
-
+/* Dropdown Menu */
 .navDropdown {
   position: relative;
+  display: inline-block;
 }
 
 .dropdownToggle {
-  background: none;
+  background-color: transparent;
   border: none;
-  color: #333;
   font-size: 1rem;
+  color: #333;
   cursor: pointer;
-  padding: 0.5rem;
+}
+
+.dropdownToggle:hover {
+  color: #007bff;
 }
 
 .dropdownMenu {
   display: none;
   position: absolute;
   top: 100%;
-  right: 5%;
+  left: 0;
   background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
-  padding: 1rem;
-  z-index: 1;
+  min-width: 150px;
+  z-index: 1000;
 }
 
+.dropdownMenu a {
+  display: block;
+  padding: 10px 15px;
+  color: #333;
+  text-decoration: none;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.dropdownMenu a:hover {
+  background-color: #f1f1f1;
+  color: #007bff;
+}
+
+.dropdownDivider {
+  height: 1px;
+  background-color: #ddd;
+  margin: 5px 0;
+}
+
+/* Show dropdown on hover */
 .navDropdown:hover .dropdownMenu {
   display: block;
 }
 
-.customNavDropdownItem {
-  display: block;
-  padding: 0.5rem 1rem;
-  color: #333;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
+/* Mobile Menu Toggle */
+.navToggle {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
 }
 
-.customNavDropdownItem:hover {
-  background-color: #f1f1f1;
+.navToggle:hover {
+  color: #007bff;
 }
 
-.dropdownDivider {
-  border-top: 1px solid #ddd;
-  margin: 0.5rem 0;
+/* Collapsed Navigation */
+.navCollapse {
+  display: flex;
+  align-items: center;
 }
 
+.navCollapse .nav {
+  display: flex;
+  align-items: center;
+}
+
+/* Responsive Styles */
 @media (max-width: 768px) {
-  .container {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
   .navLeft {
-    width: 100%;
-    flex-direction: column;
-    gap: 1rem;
+    display: none;
   }
 
   .navToggle {
@@ -127,30 +139,26 @@
   }
 
   .navCollapse {
-    width: 100%;
-    display: flex;
+    display: none;
     flex-direction: column;
-    align-items: center;
+    width: 100%;
   }
 
-  .navToggle.active + .navCollapse .nav {
+  .navCollapse.active {
     display: flex;
   }
 
   .customNavLink {
-    padding: 1rem;
-    width: 100%;
-    text-align: center;
+    margin-right: 0;
+    margin-bottom: 10px;
   }
 
   .dropdownMenu {
     position: static;
-    width: 100%;
     box-shadow: none;
   }
 
-  .customNavDropdownItem {
-    width: 100%;
-    text-align: center;
+  .dropdownMenu a {
+    padding: 10px;
   }
 }
