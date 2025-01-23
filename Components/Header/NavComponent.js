@@ -23,12 +23,26 @@ const NavComponent = () => {
           <Link
             href="/completed-todos"
             className={`${styles.customNavLink} ${
-              router.pathname === "/completed-todos"
-                ? styles.activeLink
-                : ""
+              router.pathname === "/completed-todos" ? styles.activeLink : ""
             }`}
           >
             Completed Todos
+          </Link>
+          <Link
+            href="/about"
+            className={`${styles.customNavLink} ${
+              router.pathname === "/about" ? styles.activeLink : ""
+            }`}
+          >
+            About
+          </Link>
+          <Link
+            href="/contact"
+            className={`${styles.customNavLink} ${
+              router.pathname === "/contact" ? styles.activeLink : ""
+            }`}
+          >
+            Contact
           </Link>
         </div>
         <div className={styles.navToggle}>☰</div>
