@@ -1,12 +1,12 @@
-/* General Navbar Styles */
 .customNavbar {
-  background-color: #f8f9fa;
-  border-bottom: 1px solid #ddd;
+  background-color: #ffffff;
+  border-bottom: 2px solid #e0e0e0;
   padding: 10px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   font-family: Arial, sans-serif;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .container {
@@ -16,19 +16,17 @@
   justify-content: space-between;
 }
 
-/* Brand Styles */
 .customNavbarBrand {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   font-weight: bold;
-  color: #333;
+  color: #3f51b5;
   text-decoration: none;
 }
 
 .customNavbarBrand:hover {
-  color: #007bff;
+  color: #1a237e;
 }
 
-/* Navigation Links */
 .navLeft {
   display: flex;
   align-items: center;
@@ -37,21 +35,21 @@
 .customNavLink {
   margin-right: 15px;
   font-size: 1rem;
-  color: #333;
+  color: #616161;
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, font-weight 0.3s ease;
 }
 
 .customNavLink:hover {
-  color: #007bff;
+  color: #f50057;
+  font-weight: 500;
 }
 
 .activeLink {
   font-weight: bold;
-  color: #007bff;
+  color: #1e88e5;
 }
 
-/* Dropdown Menu */
 .navDropdown {
   position: relative;
   display: inline-block;
@@ -61,12 +59,12 @@
   background-color: transparent;
   border: none;
   font-size: 1rem;
-  color: #333;
+  color: #616161;
   cursor: pointer;
 }
 
 .dropdownToggle:hover {
-  color: #007bff;
+  color: #f50057;
 }
 
 .dropdownMenu {
@@ -74,8 +72,8 @@
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: #fff;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
   min-width: 150px;
   z-index: 1000;
@@ -84,40 +82,39 @@
 .dropdownMenu a {
   display: block;
   padding: 10px 15px;
-  color: #333;
+  color: #424242;
   text-decoration: none;
   font-size: 0.9rem;
   white-space: nowrap;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .dropdownMenu a:hover {
-  background-color: #f1f1f1;
-  color: #007bff;
+  background-color: #f5f5f5;
+  color: #f50057;
 }
 
 .dropdownDivider {
   height: 1px;
-  background-color: #ddd;
+  background-color: #e0e0e0;
   margin: 5px 0;
 }
 
-/* Show dropdown on hover */
 .navDropdown:hover .dropdownMenu {
   display: block;
 }
 
-/* Mobile Menu Toggle */
 .navToggle {
   display: none;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
+  color: #616161;
   cursor: pointer;
 }
 
 .navToggle:hover {
-  color: #007bff;
+  color: #f50057;
 }
 
-/* Collapsed Navigation */
 .navCollapse {
   display: flex;
   align-items: center;
@@ -128,7 +125,6 @@
   align-items: center;
 }
 
-/* Responsive Styles */
 @media (max-width: 768px) {
   .navLeft {
     display: none;
@@ -142,6 +138,9 @@
     display: none;
     flex-direction: column;
     width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px;
   }
 
   .navCollapse.active {
