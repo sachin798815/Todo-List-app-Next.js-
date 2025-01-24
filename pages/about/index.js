@@ -1,4 +1,4 @@
-import "../../Components/Body/AboutPage";
+import AboutPage from "../../Components/Body/AboutPage";
 const AboutDisplayer=()=>{
     return(
     <>
