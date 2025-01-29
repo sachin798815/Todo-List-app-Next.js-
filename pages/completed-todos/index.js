@@ -31,7 +31,6 @@ export async function getStaticProps() {
         id: todo._id.toString(),
         title: todo.title,
         description: todo.description,
-        date: todo.date,
         status:todo.status
       }))
     },

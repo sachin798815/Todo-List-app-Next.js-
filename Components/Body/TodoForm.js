@@ -4,26 +4,22 @@ import { Button, Container, Form } from "react-bootstrap";
 const TodoForm = (props) => {
   const titleRef = useRef();
   const descriptionRef = useRef();
-  const dateRef = useRef();
 
   const addTodoHandler = (e) => {
     e.preventDefault();
 
     const title = titleRef.current.value.trim();
     const description = descriptionRef.current.value.trim();
-    const date = dateRef.current.value;
    
     const todoData = {
       title,
       description,
-      date,
       status:"pending"
     };
 
     props.onAddTodo(todoData);
     titleRef.current.value = "";
     descriptionRef.current.value = "";
-    dateRef.current.value = "";
   };
 
   return (
@@ -41,10 +37,6 @@ const TodoForm = (props) => {
             placeholder="Enter description"
             ref={descriptionRef}
           />
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="formTodoDate">
-          <Form.Label>Todo Date</Form.Label>
-          <Form.Control type="date" ref={dateRef} />
         </Form.Group>
         <Button type="submit" variant="warning">
           ADD TODO

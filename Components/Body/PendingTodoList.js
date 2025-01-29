@@ -1,4 +1,5 @@
 import { Button, Container } from "react-bootstrap";
+import styles from './PendingTodoList.module.css';  // Importing CSS module
 
 const PendingTodoList = (props) => {
   const deleteButtonHandler = async (todo) => {
@@ -34,14 +35,30 @@ const PendingTodoList = (props) => {
   };
 
   return (
-    <Container className="border border-warning shadow p-3 mb-5 bg-white rounded">
-      <ul>
+    <Container className={styles.container}>
+      <ul className={styles.todoList}>
         {props.TodoList.map((todo) =>
           todo.status === "pending" ? (
             <li key={todo.id}>
-              {todo.title} - {todo.description}
-              <Button onClick={() => doneButtonHandler(todo)}>Done</Button>
-              <Button onClick={() => deleteButtonHandler(todo)}>Delete</Button>
+              <div className={styles.todoContent}>
+                <div className={styles.todoText}>
+                  <span className={styles.todoTitle}>{todo.title}</span> - {todo.description}
+                </div>
+                <div className={styles.todoButtons}>
+                  <Button
+                    className={styles.doneButton}
+                    onClick={() => doneButtonHandler(todo)}
+                  >
+                    Done
+                  </Button>
+                  <Button
+                    className={styles.deleteButton}
+                    onClick={() => deleteButtonHandler(todo)}
+                  >
+                    Delete
+                  </Button>
+                </div>
+              </div>
             </li>
           ) : null
         )}
