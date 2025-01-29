@@ -46,25 +46,6 @@ const NavComponent = () => {
           </Link>
         </div>
         <div className={styles.navToggle}>☰</div>
-        <div className={styles.navCollapse}>
-          <div className={styles.nav}>
-            <div className={styles.navDropdown}>
-              <button className={styles.dropdownToggle}>More</button>
-              <div className={styles.dropdownMenu}>
-                <a href="#action/3.1" className={styles.customNavDropdownItem}>
-                  Profile
-                </a>
-                <a href="#action/3.2" className={styles.customNavDropdownItem}>
-                  Settings
-                </a>
-                <div className={styles.dropdownDivider}></div>
-                <a href="#action/3.3" className={styles.customNavDropdownItem}>
-                  Logout
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </nav>
   );
