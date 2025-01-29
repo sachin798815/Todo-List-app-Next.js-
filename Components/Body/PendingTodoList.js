@@ -1,5 +1,5 @@
 import { Button, Container } from "react-bootstrap";
-import styles from './PendingTodoList.module.css';  // Importing CSS module
+import styles from './PendingTodoList.module.css';
 
 const PendingTodoList = (props) => {
   const deleteButtonHandler = async (todo) => {
