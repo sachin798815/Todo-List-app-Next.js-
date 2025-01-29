@@ -15,6 +15,7 @@ function TodoHomePage(props) {
     });
     const data = await response.json();
     console.log(data);
+    window.location.reload();
   }
 
   return (
