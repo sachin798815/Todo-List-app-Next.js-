@@ -19,7 +19,7 @@ const PendingTodoList = (props) => {
     } catch (error) {
       console.error("Error deleting todo:", error);
     }
-    setTodosArray(todos=>todosArray.filter(todos.id!=todo.id));
+    setTodosArray(todosArray.filter(todos=>todos.id!=todo.id));
   };
 
   const doneButtonHandler = async (todo) => {
@@ -36,7 +36,7 @@ const PendingTodoList = (props) => {
     } catch (error) {
       console.error("Error updating todo:", error);
     }
-    setTodosArray(todos=>todosArray.filter(todos.id!=todo.id));
+    setTodosArray(todosArray.filter(todos=>todos.id!=todo.id));
 
   };
 
