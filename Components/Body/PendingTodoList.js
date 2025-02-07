@@ -1,7 +1,10 @@
 import { Button, Container } from "react-bootstrap";
 import styles from './PendingTodoList.module.css';
+import { useState } from "react";
 
 const PendingTodoList = (props) => {
+  const [todosArray, setTodosArray]=useState(props.TodoList);
+
   const deleteButtonHandler = async (todo) => {
     try {
       const response = await fetch("/api/delete-todo", {
@@ -13,10 +16,10 @@ const PendingTodoList = (props) => {
       });
       const data = await response.json();
       console.log(data.message);
-      window.location.reload();
     } catch (error) {
       console.error("Error deleting todo:", error);
     }
+    setTodosArray(todos=>todosArray.filter(todos.id!=todo.id));
   };
 
   const doneButtonHandler = async (todo) => {
@@ -30,16 +33,17 @@ const PendingTodoList = (props) => {
       });
       const data = await response.json();
       console.log(data.message);
-      window.location.reload();
     } catch (error) {
       console.error("Error updating todo:", error);
     }
+    setTodosArray(todos=>todosArray.filter(todos.id!=todo.id));
+
   };
 
   return (
     <Container className={styles.container}>
       <ul className={styles.todoList}>
-        {props.TodoList.map((todo) =>
+        {todosArray.map((todo) =>
           todo.status === "pending" ? (
             <li key={todo.id}>
               <div className={styles.todoContent}>
